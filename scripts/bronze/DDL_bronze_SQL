@@ -1,6 +1,7 @@
 -- Script Purpose:
 -- this script creates tables in the 'bronze' schema.
 
+DROP TABLE IF EXISTS bronze.prd_info;
 CREATE TABLE bronze.prd_info (
 	prd_id INTEGER,
 	prd_key VARCHAR(50),
@@ -11,6 +12,7 @@ CREATE TABLE bronze.prd_info (
 	prd_end_dt DATE
 );
 
+DROP TABLE IF EXISTS bronze.sales_details;
 CREATE TABLE bronze.sales_details (
 	sls_ord_num VARCHAR(100),
 	sls_prd_key VARCHAR(100),
@@ -23,6 +25,7 @@ CREATE TABLE bronze.sales_details (
 	sls_price INTEGER
 );
 
+DROP TABLE IF EXISTS crm_cust_info;
 CREATE TABLE crm_cust_info (
 	cst_id INTEGER,
 	cst_key VARCHAR(50),
@@ -33,17 +36,20 @@ CREATE TABLE crm_cust_info (
 	cst_create_Date DATE
 );
 
+DROP TABLE IF EXISTS bronze.erp_loc_a101;
 CREATE TABLE bronze.erp_loc_a101 (
 	cid VARCHAR(100),
 	cntry VARCHAR(100)
 );
 
+DROP TABLE IF EXISTS bronze.erp_cust_az12;
 CREATE TABLE bronze.erp_cust_az12 (
 	cid VARCHAR(100),
 	bdate DATE,
 	gen VARCHAR(100)
 );
 
+DROP TABLE IF EXISTS bronze.erp_px_cat_g1v2;
 CREATE TABLE bronze.erp_px_cat_g1v2 (
 	id VARCHAR(100),
 	cat VARCHAR(100),

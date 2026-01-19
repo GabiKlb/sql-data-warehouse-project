@@ -1,3 +1,6 @@
+-- Script Purpose:
+-- this script creates tables in the 'bronze' schema.
+
 CREATE TABLE bronze.prd_info (
 	prd_id INTEGER,
 	prd_key VARCHAR(50),

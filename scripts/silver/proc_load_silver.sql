@@ -1,3 +1,5 @@
+-- Stored Procedure: Load Silver Layer (Bronze -> Silver)
+
 -- Inserting Data into Silver layer
 CREATE OR REPLACE PROCEDURE silver.silver_load()
 LANGUAGE plpgsql

@@ -117,7 +117,7 @@ SELECT
 		ELSE 'n/a'
 		END AS prd_line,
 	prd_start_dt,
-	prd_end_dt
+	LEAD(prd_start_dt) OVER (PARTITION BY prd_key ORDER BY prd_start_dt) -1 AS prd_end_dt
 FROM bronze.prd_info;
 
 TRUNCATE TABLE silver.crm_cust_info;

@@ -1,39 +1,32 @@
-DATA WAREHOUSE AND ANALYTICS PROJECT
+# SQL Data Warehouse Project
 
+## Overview
 
-Building a modern data warehouse with PostgreSQL, including ETL processes, data modeling, and analytics
+This project simulates the end-to-end design and implementation of a modern Data Warehouse using SQL.
 
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. 
+The objective is to model, transform, and structure raw business data into an analytical layer optimized for reporting and decision-making.
 
+## Architecture
 
-📖 Project Overview
-This project involves:
+This project follows a Medallion Architecture pattern to progressively refine data quality and structure.
 
-Data Architecture: Designing a Modern Data Warehouse Using Medallion Architecture Bronze, Silver, and Gold layers.
-ETL Pipelines: Extracting, transforming, and loading data from source systems into the warehouse.
-Data Modeling: Developing fact and dimension tables optimized for analytical queries.
-Analytics & Reporting: Creating SQL-based reports and dashboards for actionable insights.
+### Bronze Layer (Raw Data)
+- Source CSV files ingested without transformation
+- Preserves original structure for traceability
 
+### Silver Layer (Staging)
+- Data cleansing and type casting
+- Null handling and validation
+- Deduplication logic
+- Standardization of formats
 
+### Gold Layer (Data Warehouse)
+- Dimensional modeling (Star Schema)
+- Fact and dimension tables
+- Surrogate key implementation
+- Optimized for analytical queries
 
-🚀 Project Requirements
-Building the Data Warehouse (Data Engineering)
-Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
-
-Specifications
-
-Data Sources: Import data from two source systems (ERP and CRM) provided as CSV files.
-Data Quality: Cleanse and resolve data quality issues prior to analysis.
-Integration: Combine both sources into a single, user-friendly data model designed for analytical queries.
-Scope: Focus on the latest dataset only; historization of data is not required.
-Documentation: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
-BI: Analytics & Reporting (Data Analysis)
-Objective
-Develop SQL-based analytics to deliver detailed insights into:
-
-Customer Behavior
-Product Performance
-Sales Trends
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.
-
+The star schema was chosen to:
+- Simplify analytical queries
+- Improve aggregation performance
+- Enhance maintainability
